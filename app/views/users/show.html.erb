@@ -10,10 +10,13 @@
   <%= @user.email %>
 </p>
 
-<p>
-    <strong>Message posté:</strong>
-    <%= @post.content %>
-</p>
+<% unless @post.nil?%>
+    <p>
+        <strong>Message posté:</strong>
+        <%= @post.content %>
+    </p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
